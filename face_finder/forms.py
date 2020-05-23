@@ -11,6 +11,7 @@ class FaceFinderForm(forms.ModelForm):
         }
         
         fields = ['title', 'imageIn', 'videoIn']
+       #подстраховка
         name = fields[0]
         image = fields[1]
         video = fields[2]
