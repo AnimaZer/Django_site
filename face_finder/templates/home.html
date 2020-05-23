@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face finder</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-image: url(https://krot.info/uploads/posts/2020-01/1579387501_50-106.png);
+      background-attachment: fixed;
+    }
+    .jumbotron {
+      background-color: rgba(128, 128, 128, 0.5);
+      width: 40em;
+      position: relative;
+      padding: 50px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+
+
+    }
+
+    .sub-form {
+      margin-left: 20%;
+    }
+
+    label {
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      line-height: 40px;
+      font-weight: bold;
+    }
+
+    .sub-btn {
+      padding: 5px;
+      position: relative;
+      overflow: hidden;
+      height: 50px;
+      background: #4169E1;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      margin-left: 25%;
+    }
+
+    #id_imageIn:hover,
+    #id_videoIn:hover {
+      background: #1E90FF;
+    }
+
+    #id_imageIn,
+    #id_videoIn {
+      line-height: 40px;
+      font-weight: bold;
+    }
+
+    #id_imageIn,
+    #id_videoIn {
+      padding: 5px;
+      position: relative;
+      overflow: hidden;
+      height: 50px;
+      background: #4169E1;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    #id_title:placeholder-shown+label {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+  </style>
+  
+  <div class="jumbotron">
+
+    <form class="sub-form" action="{% url 'processing_run'%}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="sub-btn" type="submit">Загрузить</button>
+    </form>
+  </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</html>
